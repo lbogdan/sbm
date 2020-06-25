@@ -118,7 +118,7 @@ do_install_binary() {
   fi
 
   download_url="$(get_key "$binary" download_url)"
-  if [ -z "$download_url" ]; then
+  if [ "$download_url" = "null" ]; then
     # echo $version
     release="$(get_release "$releases" $version)"
     # echo "release: [$release]"
@@ -242,6 +242,13 @@ BINARIES="$(cat <<-END
     "repo": "vmware-tanzu/octant",
     "asset": "octant_.+_Linux-64bit.tar.gz",
     "targz": "*/octant"
+  },
+  {
+    "name": "kail",
+    "repo": "boz/kail",
+    "asset": "kail_.+_linux_amd64",
+    "targz": "kail",
+    "version": "version | cut -d ' ' -f 1"
   }
 ]
 END
