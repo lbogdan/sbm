@@ -249,6 +249,13 @@ BINARIES="$(cat <<-END
     "asset": "kail_.+_linux_amd64",
     "targz": "kail",
     "version": "version | cut -d ' ' -f 1"
+  },
+  {
+    "name": "dive",
+    "repo": "wagoodman/dive",
+    "asset": "dive_.+_linux_amd64.tar.gz",
+    "targz": "dive",
+    "version": "-v | cut -d ' ' -f 2"
   }
 ]
 END
